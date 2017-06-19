@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "acorn": "^5.0.3",
+    "escodegen": "^1.8.1",
     "esprima": "^4.0.0"
   }
 }
