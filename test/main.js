@@ -16,6 +16,7 @@ function myFunc(p1, p2){
   }
 
   throw Error("p2 is greater!!!");
+  throw "p2 is greater!!!";
 }
 
 module.exports = {
