@@ -65,9 +65,13 @@ function doesItReturn(fun){
       // console.log(node.type + (parent ? " from parent " + parent.type +
       //     " via " + prop + (idx !== undefined ? "[" + idx + "]" : "") : ""));
       if(node.type === 'ReturnStatement'){
+        console.log(node);
         if(node.argument.value != null)
           rTypes.push(typeof node.argument.value);
-        else if(node.argument.type === 'Identifier')
+        else if(node.argument.type === 'Identifier' ||
+                node.argument.type === 'ConditionalExpression' ||
+                node.argument.type === 'CallExpression' ||
+                node.argument.type === 'BinaryExpression')
           rTypes.push('any');
       }
   }});
