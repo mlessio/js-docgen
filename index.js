@@ -5,9 +5,11 @@ var traverse = require("ast-traverse");
 
 const escodegen = require("escodegen");
 
-const fileData = fs.readFileSync(path.join(__dirname, "test/main.js"), "utf-8");
+const fileName = path.join(__dirname, 'test/main.js');
 
-var ast = esprima.parse(fileData, {comment: true});
+const fileData = fs.readFileSync(fileName, "utf-8");
+
+var ast = esprima.parse(fileData, {comment: true, range: true, tokens: true});
 
 //analyze the first level
 // for(var i = 0, len = ast.body.length; i < len; i++){
@@ -30,11 +32,11 @@ traverse(ast, {pre: function(node, parent, prop, idx) {
       }];
     }
 }});
-console.log('traversed!');
 
-//escodegen.attachComments(ast, ast.comments, ast.tokens);
-var rebuiltData = escodegen.generate(ast, {comment: true});
+escodegen.attachComments(ast, ast.comments, ast.tokens);
+var rebuiltData = escodegen.generate(ast, {comment: true, format: { preserveBlankLines: true}});
 console.log(rebuiltData);
+fs.writeFileSync(fileName.replace('.js', '.annotated.js'), rebuiltData, "utf-8");
 
 function analyzeFunction(fun){
   var commentString = '\n * ';
