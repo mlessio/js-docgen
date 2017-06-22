@@ -63,8 +63,10 @@ function test5() {
  * test6
  * @async false
  * @return {any}
+ * @throws {Error}
 */
 function test6() {
+    throw new Error('asdf');
     return test5();
 }
 module.exports = { exportedValue: myFunc };

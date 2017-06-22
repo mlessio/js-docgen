@@ -36,6 +36,7 @@ function test5(){
 }
 
 function test6(){
+  throw new Error("asdf");
   return test5();
 }
 
