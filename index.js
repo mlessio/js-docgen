@@ -5,7 +5,22 @@ var traverse = require("ast-traverse");
 
 const escodegen = require("escodegen");
 
-const fileName = path.join(__dirname, 'test/main.js');
+Array.prototype.uniquePush=(function(){
+    return function() {
+        if(this.indexOf(arguments[0]) === -1)
+          return Array.prototype.push.apply(this,arguments);
+    };
+})();
+
+
+var fileName = '';
+
+if(process.argv[2] === '-f')
+  fileName = process.argv[3];
+else if(process.argv[2] === '--test')
+  fileName = path.join(__dirname, 'test/main.js');
+else
+  fileName = '/dev/stdin';
 
 const fileData = fs.readFileSync(fileName, "utf-8");
 
@@ -67,14 +82,14 @@ function doesItReturn(fun){
       // console.log(node.type + (parent ? " from parent " + parent.type +
       //     " via " + prop + (idx !== undefined ? "[" + idx + "]" : "") : ""));
       if(node.type === 'ReturnStatement'){
-        console.log(node);
+        //console.log(node);
         if(node.argument.value != null)
-          rTypes.push(typeof node.argument.value);
+          rTypes.uniquePush(typeof node.argument.value);
         else if(node.argument.type === 'Identifier' ||
                 node.argument.type === 'ConditionalExpression' ||
                 node.argument.type === 'CallExpression' ||
                 node.argument.type === 'BinaryExpression')
-          rTypes.push('any');
+          rTypes.uniquePush('any');
       }
   }});
   return rTypes;
@@ -86,13 +101,14 @@ function doesItThrow(fun){
       // console.log(node.type + (parent ? " from parent " + parent.type +
       //     " via " + prop + (idx !== undefined ? "[" + idx + "]" : "") : ""));
       if(node.type === 'ThrowStatement'){
+        console.log(node);
         if(node.argument.value != null)
-          tTypes.push(typeof node.argument.value);
-        else if(node.argument.type === 'CallExpression'){
+          tTypes.uniquePush(typeof node.argument.value);
+        else if(node.argument.type === 'CallExpression' || node.argument.type === 'NewExpression'){
           if(node.argument.callee)
-            tTypes.push(node.argument.callee.name)
+            tTypes.uniquePush(node.argument.callee.name)
           else
-            tTypes.push('any');
+            tTypes.uniquePush('any');
         }
       }
   }});
