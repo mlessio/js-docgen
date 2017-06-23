@@ -54,7 +54,7 @@ console.log(rebuiltData);
 fs.writeFileSync(fileName.replace('.js', '.annotated.js'), rebuiltData, "utf-8");
 
 function analyzeFunction(fun){
-  var commentString = '\n * ';
+  var commentString = '*\n * ';
   commentString += fun.id.name;
   commentString += '\n * ';
   if(fun.params)

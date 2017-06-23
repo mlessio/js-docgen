@@ -1,7 +1,7 @@
 // This is an inline comment
 const fs = require('fs');
 var a = 12;
-/*
+/**
  * myFunc
  * @param p1
  * @param p2
@@ -9,6 +9,7 @@ var a = 12;
  * @return {boolean|any}
  * @throws {Error|string}
 */
+//this is a prepended comment inline
 function myFunc(p1, p2) {
     if (p1 === p2)
         return true;
@@ -22,7 +23,7 @@ function myFunc(p1, p2) {
     throw Error('p2 is greater!!!');
     throw 'p2 is greater!!!';
 }
-/*
+/**
  * test2
  * @param a
  * @param b
@@ -30,10 +31,11 @@ function myFunc(p1, p2) {
  * @async false
  * @return {any}
 */
+/*this is a multiline prepended comment*/
 function test2(a, b, c) {
     return a + b + c;
 }
-/*
+/**
  * test3
  * @param a
  * @param b
@@ -43,7 +45,7 @@ function test2(a, b, c) {
 function test3(a, b) {
     return a > b ? a : b;
 }
-/*
+/**
  * test4
  * @async false
  * @return {number}
@@ -51,7 +53,7 @@ function test3(a, b) {
 function test4() {
     return 5;
 }
-/*
+/**
  * test5
  * @async false
  * @return {any}
@@ -59,7 +61,7 @@ function test4() {
 function test5() {
     return test4();
 }
-/*
+/**
  * test6
  * @async false
  * @return {any}

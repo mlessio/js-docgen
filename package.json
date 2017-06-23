@@ -19,6 +19,8 @@
     "acorn": "^5.0.3",
     "ast-traverse": "^0.1.1",
     "escodegen": "^1.8.1",
-    "esprima": "^4.0.0"
+    "esprima": "^4.0.0",
+    "jsdoc": "^3.4.3",
+    "tern": "^0.21.0"
   }
 }

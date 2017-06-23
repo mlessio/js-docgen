@@ -3,6 +3,7 @@ const fs = require("fs");
 
 var a = 12;
 
+//this is a prepended comment inline
 function myFunc(p1, p2){
   if(p1 === p2)
     return true;
@@ -19,6 +20,7 @@ function myFunc(p1, p2){
   throw "p2 is greater!!!";
 }
 
+/*this is a multiline prepended comment*/
 function test2(a, b, c){
   return a+b+c;
 }
