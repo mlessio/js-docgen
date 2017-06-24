@@ -5,7 +5,7 @@ var a = 12;
  * myFunc
  * @param p1
  * @param p2
- * @async false
+ * @async undefined
  * @return {boolean|any}
  * @throws {Error|string}
 */
@@ -28,7 +28,7 @@ function myFunc(p1, p2) {
  * @param a
  * @param b
  * @param c
- * @async false
+ * @async undefined
  * @return {any}
 */
 /*this is a multiline prepended comment*/
@@ -39,7 +39,7 @@ function test2(a, b, c) {
  * test3
  * @param a
  * @param b
- * @async false
+ * @async undefined
  * @return {any}
 */
 function test3(a, b) {
@@ -47,7 +47,7 @@ function test3(a, b) {
 }
 /**
  * test4
- * @async false
+ * @async undefined
  * @return {number}
 */
 function test4() {
@@ -55,7 +55,7 @@ function test4() {
 }
 /**
  * test5
- * @async false
+ * @async undefined
  * @return {any}
 */
 function test5() {
@@ -63,7 +63,7 @@ function test5() {
 }
 /**
  * test6
- * @async false
+ * @async undefined
  * @return {any}
  * @throws {Error}
 */

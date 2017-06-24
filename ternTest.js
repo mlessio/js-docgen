@@ -1,4 +1,3 @@
-
 var infer = require('tern/lib/infer');
 var tern = require('tern');
 const fs = require("fs");
@@ -10,38 +9,64 @@ var fileName = path.join(__dirname, 'test/tern.js');
 
 const fileData = fs.readFileSync(fileName, "utf-8");
 
-var ast = esprima.parse(fileData, {range: true});
-var myConf = {
+//var ast = esprima.parse(fileData, {range: true});
+var ast = infer.parse(fileData);
+var ternServerConfig = {
   switchToDoc: function(name) { self.selectDoc(self.findDoc(name)) },
   useWorker: false
 };
 
-var server = new tern.Server(myConf);
-infer.Context([]);
-console.log(server.request);
-var request = {
-  query:{
-    type: "type",
-    lineCharPositions: true,
-    end: {
-      line: 4,
-      ch: 4,
-      sticky: "after",
-      xRel: -1
-    },
-    file: "test"
-  },
-  files: []
-};
+//declares a tern server instance
+var server = new tern.Server(ternServerConfig);
+
+
+function getType(file, line, col, cb){
+  var request = {
+    query:{
+      type: "type",
+      end: {
+        line: line,
+        ch: col
+      },
+      file: file
+    }
+  };
+
+  //makes a type inference request to the tern server
+  server.request(request, cb);
+}
+
+//adds a file to the infer engine context
 server.addFile('test', fileData);
-server.request(request, function (error, data) {
-  console.log('err', error);
-  console.log('data', data);
+
+getType('test', 4, 4, function(err, data){
+  if(err){
+    console.error('Err!', err);
+    return;
+  }
+  console.log(data);
 });
 
-ast.body[1].declarations[0].id.name = 'faca';
-ast.body[1].declarations[0].init.value = 'foco';
-ast.body[1].declarations[0].init.raw = 'foco';
+getType('test', 0, 13, function(err, data){
+  if(err){
+    console.error('Err!', err);
+    return;
+  }
+  console.log(data);
+});
 
-var rebuiltData = escodegen.generate(ast, { format: { preserveBlankLines: true}});
-console.log(rebuiltData);
+getType('test', 6, 14, function(err, data){
+  if(err){
+    console.error('Err!', err);
+    return;
+  }
+  console.log(data);
+});
+
+getType('test', 13, 5, function(err, data){
+  if(err){
+    console.error('Err!', err);
+    return;
+  }
+  console.log(data);
+});
