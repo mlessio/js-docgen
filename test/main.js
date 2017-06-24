@@ -42,6 +42,15 @@ function test6(){
   return test5();
 }
 
+function noreturn(){
+  var f = 1;
+}
+
+function voidreturn(){
+  var f = 1;
+  return;
+}
+
 module.exports = {
   exportedValue: myFunc
 };

@@ -5,7 +5,7 @@ var a = 12;
  * myFunc
  * @param p1
  * @param p2
- * @return {boolean|any}
+ * @return {bool}
  * @throws {Error|string}
  * */
 //this is a prepended comment inline
@@ -51,18 +51,31 @@ function test4() {
 }
 /**
  * test5
- * @return {any}
+ * @return {number}
  * */
 function test5() {
     return test4();
 }
 /**
  * test6
- * @return {any}
+ * @return {number}
  * @throws {Error}
  * */
 function test6() {
     throw new Error('asdf');
     return test5();
+}
+/**
+ * noreturn
+ * */
+function noreturn() {
+    var f = 1;
+}
+/**
+ * voidreturn
+ * */
+function voidreturn() {
+    var f = 1;
+    return;
 }
 module.exports = { exportedValue: myFunc };
