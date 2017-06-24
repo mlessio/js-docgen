@@ -3,9 +3,9 @@ const fs = require('fs');
 var a = 12;
 /**
  * myFunc
- * @param p1
- * @param p2
- * @return {bool}
+ * @param p1 {number}
+ * @param p2 {number}
+ * @return {bool|number}
  * @throws {MyError|string}
  * */
 //this is a prepended comment inline
@@ -24,9 +24,9 @@ function myFunc(p1, p2) {
 }
 /**
  * test2
- * @param a
- * @param b
- * @param c
+ * @param a {number}
+ * @param b {any}
+ * @param c {any}
  * @return {any}
  * */
 /*this is a multiline prepended comment*/
@@ -35,8 +35,8 @@ function test2(a, b, c) {
 }
 /**
  * test3
- * @param a
- * @param b
+ * @param a {number}
+ * @param b {any}
  * @return {any}
  * */
 function test3(a, b) {
@@ -78,4 +78,6 @@ function voidreturn() {
     var f = 1;
     return;
 }
+//helps the inference engine context
+myFunc(11, 22);
 module.exports = { exportedValue: myFunc };

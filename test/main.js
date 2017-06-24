@@ -51,6 +51,9 @@ function voidreturn(){
   return;
 }
 
+//helps the inference engine context
+myFunc(11,22);
+
 module.exports = {
   exportedValue: myFunc
 };
