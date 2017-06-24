@@ -6,7 +6,7 @@ var a = 12;
  * @param p1
  * @param p2
  * @return {bool}
- * @throws {Error|string}
+ * @throws {MyError|string}
  * */
 //this is a prepended comment inline
 function myFunc(p1, p2) {
@@ -19,7 +19,7 @@ function myFunc(p1, p2) {
     if (p1 > p2) {
         return p1;
     }
-    throw Error('p2 is greater!!!');
+    throw MyError('p2 is greater!!!');
     throw 'p2 is greater!!!';
 }
 /**

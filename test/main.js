@@ -16,7 +16,7 @@ function myFunc(p1, p2){
     return p1;
   }
 
-  throw Error("p2 is greater!!!");
+  throw MyError("p2 is greater!!!");
   throw "p2 is greater!!!";
 }
 
