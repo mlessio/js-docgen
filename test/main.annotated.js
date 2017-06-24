@@ -5,10 +5,9 @@ var a = 12;
  * myFunc
  * @param p1
  * @param p2
- * @async undefined
  * @return {boolean|any}
  * @throws {Error|string}
-*/
+ * */
 //this is a prepended comment inline
 function myFunc(p1, p2) {
     if (p1 === p2)
@@ -28,9 +27,8 @@ function myFunc(p1, p2) {
  * @param a
  * @param b
  * @param c
- * @async undefined
  * @return {any}
-*/
+ * */
 /*this is a multiline prepended comment*/
 function test2(a, b, c) {
     return a + b + c;
@@ -39,34 +37,30 @@ function test2(a, b, c) {
  * test3
  * @param a
  * @param b
- * @async undefined
  * @return {any}
-*/
+ * */
 function test3(a, b) {
     return a > b ? a : b;
 }
 /**
  * test4
- * @async undefined
  * @return {number}
-*/
+ * */
 function test4() {
     return 5;
 }
 /**
  * test5
- * @async undefined
  * @return {any}
-*/
+ * */
 function test5() {
     return test4();
 }
 /**
  * test6
- * @async undefined
  * @return {any}
  * @throws {Error}
-*/
+ * */
 function test6() {
     throw new Error('asdf');
     return test5();
