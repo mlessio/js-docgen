@@ -51,6 +51,20 @@ function voidreturn(){
   return;
 }
 
+function throwCatch(){
+  var f = 1;
+
+  try{
+    throw new Error("asdf");
+    return 0;
+  }catch(e){
+    return true;
+    throw "str";
+  }
+  throw 1;
+  return;
+}
+
 //helps the inference engine context
 myFunc(11,22);
 
