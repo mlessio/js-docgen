@@ -18,6 +18,7 @@ npm install --save jsdocgen
 * Throws statements
 * Throws types(with Ternjs inference engine)
 * Try/Catch blocks
+* Function.prototype assignments 
 
 ## How does it works?
 
