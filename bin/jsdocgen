@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+const fs = require("fs");
+const argv = require('yargs').argv;
+const path = require("path");
+const JSDocGen = require('../index');
+
+var docGenerator = new JSDocGen();
+
+var fileName = '';
+
+if(argv.f)
+  fileName = argv.f;
+else if(argv.test)
+  fileName = path.join(__dirname, '../test/main.js');
+else
+  fileName = '/dev/stdin';
+
+const fileData = fs.readFileSync(fileName, "utf-8");
+
+docGenerator.annotate(fileName, fileData);
