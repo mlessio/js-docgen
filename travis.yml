@@ -1,0 +1,14 @@
+# @Author: Martino Lessio <martinolessio>
+# @Date:   2017-09-14T23:36:45+02:00
+# @Email:  martino.lessio@gmail.com
+# @Project: GuidApp
+# @Last modified by:   martinolessio
+# @Last modified time: 2017-09-14T23:36:50+02:00
+# @Copyright: Martino Lessio
+
+
+
+language: node_js
+node_js:
+  - "6"
+  - "7"
