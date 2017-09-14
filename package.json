@@ -1,5 +1,5 @@
 {
-  "name": "jsdocgen",
+  "name": "js-docgen",
   "version": "1.0.0",
   "description": "A dummy doc annotation generator",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "generator"
   ],
   "author": "Martino Lessio",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "ast-traverse": "^0.1.1",
     "escodegen": "^1.9.0",
