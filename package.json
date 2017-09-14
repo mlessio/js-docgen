@@ -14,6 +14,7 @@
     "generator"
   ],
   "author": "Martino Lessio",
+  "repository": "https://github.com/mlessio/js-docgen",
   "license": "MIT",
   "dependencies": {
     "ast-traverse": "^0.1.1",
