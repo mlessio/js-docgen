@@ -59,4 +59,4 @@ typings/
 
 out/
 
-package-lock.json
+test/*.annotated.js
