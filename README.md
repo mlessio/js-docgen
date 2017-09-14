@@ -1,5 +1,12 @@
 # JSDocGen - an automated JSDoc generator
 
+[![Build Status](https://travis-ci.org/mlessio/js-docgen.svg?branch=master)](https://travis-ci.org/mlessio/js-docgen)
+[![npm version](https://badge.fury.io/js/js-docgen.svg)](https://badge.fury.io/js/js-docgen)
+[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+[![Code Climate](https://codeclimate.com/github/mlessio/js-docgen/badges/gpa.svg)](https://codeclimate.com/github/mlessio/js-docgen)  
+
+
 An automated library based on AST that parses and traverses a Javascript source file and adds JSDoc compliant comments.
 
 ## How to install?
@@ -18,7 +25,7 @@ npm install --save jsdocgen
 * Throws statements
 * Throws types(with Ternjs inference engine)
 * Try/Catch blocks
-* Function.prototype assignments 
+* Function.prototype assignments
 
 ## How does it works?
 
