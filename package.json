@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A dummy doc annotation generator",
   "main": "index.js",
+  "bin": {
+    "js-docgen": "./bin/jsdocgen.js"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "node index.js --test"

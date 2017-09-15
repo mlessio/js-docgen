@@ -1,3 +1,15 @@
+/**
+ * @Author: Martino Lessio <martinolessio>
+ * @Date:   2017-07-27T23:56:43+02:00
+ * @Email:  martino.lessio@gmail.com
+ * @Project: GuidApp
+ * @Last modified by:   martinolessio
+ * @Last modified time: 2017-09-15T21:38:28+02:00
+ * @Copyright: Martino Lessio
+ */
+
+
+
 #!/usr/bin/env node
 const fs = require("fs");
 const argv = require('yargs').argv;
@@ -10,8 +22,6 @@ var fileName = '';
 
 if(argv.f)
   fileName = argv.f;
-else if(argv.test)
-  fileName = path.join(__dirname, '../test/main.js');
 else
   fileName = '/dev/stdin';
 
